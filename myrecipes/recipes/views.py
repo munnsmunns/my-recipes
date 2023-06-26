@@ -1,5 +1,5 @@
 from django.views.generic import DetailView, UpdateView, CreateView, ListView
-from . import models
+from . import models, forms
 
 # Create your views here.
 class RecipeList(ListView):
@@ -10,6 +10,8 @@ class RecipeDetail(DetailView):
 
 class RecipeCreate(CreateView):
     model = models.Recipe
+    form_class = forms.RecipeForm
 
 class RecipeUpdate(UpdateView):
     model = models.Recipe
+    form_class = forms.RecipeForm
